@@ -4,5 +4,5 @@ using namespace std;
 
 int main(){
     Matrix matrix;
-    return matrix.result();
+    return matrix.mainFunc();
 }

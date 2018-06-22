@@ -6,15 +6,6 @@
 #include <iostream>
 
 using namespace std;
-// Функция вывода матрицы
-void Matrix::PrintMatr(int **mas, int m) {
-    for (int i = 0; i<m; i++) {
-        for (int j = 0; j<m; j++)  {
-            cout << mas[i][j] << " ";
-        }
-        cout << endl;
-    }
-}
 // Получение матрицы без i-й строки и j-го столбца
 void Matrix::GetMatr(int **mas, int **p, int i, int j, int m) {
     int ki, kj, di, dj;
@@ -49,8 +40,6 @@ int Matrix::Determinant(int **mas, int m) {
     if (m>2) {
         for (i = 0; i<m; i++) {
             GetMatr(mas, p, i, 0, m);
-            cout << mas[i][j] << endl;
-            PrintMatr(p, n);
             d = d + k * mas[i][0] * Determinant(p, n);
             k = -k;
         }
@@ -86,9 +75,12 @@ void Matrix::checkDimension(int N) {
             cin >> mas[i][j];
         }
     }
-    PrintMatr(mas, m);
     d = Determinant(mas, m);
     cout << "Определитель матрицы равен " << d;
     cin.get(); cin.get();
      return 0;
+}
+
+int Matrix::mainFunc() {
+    return result();
 }

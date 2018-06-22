@@ -8,13 +8,13 @@
 
 class Matrix {
 public:
-    int result();
+    int mainFunc();
 
 private:
-    void PrintMatr(int **mas, int m);
     int Determinant(int **mas, int m);
     void checkDimension(int N);
     void GetMatr(int **mas, int **p, int i, int j, int m);
+    int result();
 };
 
 
